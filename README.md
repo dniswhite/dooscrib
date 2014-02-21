@@ -1,4 +1,33 @@
 dooScrib
 =======
+A simple jquery plugin for use with the HTML5 [canvas](http://en.wikipedia.org/wiki/Canvas_element) element. More development is to implement a shared canvas using node.js and socket.io. 
 
-jquery plugin for use with HTML canvas
+### History
+The idea came while watching my [wife](http://kllywhite.com/) play this drawing game on her iPad called [DrawSomething](https://itunes.apple.com/us/app/draw-something-free/id488628250?mt=8) and I was thinking to myself that I could probably do something similar but in HTML and javascript. 
+
+### Action
+I will admit that the site is basic but you can get a feel for what the control does at the following location:
+
+[dooScrib](http://dooscrib.com/)
+
+### Usage
+Here is a quick example of how to use the code.
+
+```html
+<!--an element that will contain the canvas-->
+<div id="surface" class="span12">
+</div>
+```
+```javascript
+// create a variable for the plugin
+var surface;
+
+surface = new $('#surface').dooScribPlugin({
+	width:w,
+	height:400,
+	cssClass:'pad',
+	penSize:4
+});
+```
+
+For a more detailed example you can read this [article](http://www.codeproject.com/Articles/560229/DooScrib-A-jQuery-plugin-for-creating-a-simple-dra) which I wrote as a starting point for a series of planned articles demonstrating how to create a shared canvas. 
