@@ -31,3 +31,6 @@ surface = new $('#surface').dooScribPlugin({
 ```
 
 For a more detailed example you can read this [article](http://www.codeproject.com/Articles/560229/DooScrib-A-jQuery-plugin-for-creating-a-simple-dra) which I wrote as a starting point for a series of planned articles demonstrating how to create a shared canvas. 
+
+### Shared Canvas
+Check out the node_impl folder for a project that demonstrates how you can use the plugin to create a shared canvas. 
