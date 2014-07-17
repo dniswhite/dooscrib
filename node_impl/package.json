@@ -1,0 +1,16 @@
+{
+  "name": "monovus",
+  "subdomain": "monovus-monovus",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "version": "0.0.0-5",
+  "engines": {
+    "node": "0.10.x"
+  },
+  "dependencies": {
+    "express": "3.3.4",
+    "jade": "1.1.5",
+    "socket.io": "^1.0.6"
+  }
+}

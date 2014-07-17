@@ -1,0 +1,168 @@
+﻿@import url(http://fonts.googleapis.com/css?family=Courgette);
+
+body 
+{
+	padding-top:75px;
+}
+
+.page
+{
+    background-color: #fff;
+    border: 1px solid;
+    border-radius: 5px;
+    -moz-border-radius: 5px;
+	box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.40);
+    -moz-box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.40);
+    -webkit-box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.40);
+    padding: 15px 15px 25px 15px;
+	min-height: 100%;
+	height: auto !important;
+    height: 100%;
+    margin:0 auto -120px;
+}
+
+/* the following css for the title bar will only work with certain browsers (most likely not IE)*/
+.titleBar
+{
+	position: relative;
+	margin: 0;
+	cursor:move;
+	height:15px;
+}
+ 
+.titleBar:after
+{
+	content: attr(data-title);
+	position: absolute;
+	padding: 0px;
+	padding-left:5px;
+	font-size: 14px;
+	color: #000;
+}
+
+.window 
+{
+	border:1px solid #000;
+    border-radius: 5px;
+    -moz-border-radius: 5px;
+	box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.40);
+    -moz-box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.40);
+    -webkit-box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.40);
+}
+
+.window .active
+{
+	z-index: 1000;
+}
+
+.workSpace
+{
+	margin:5px;
+	border-right: 1px solid rgba(0, 0, 0, 0.40);
+	border-bottom: 1px solid rgba(0, 0, 0, 0.40);
+	border-left: 1px solid #000000;	
+	border-top: 1px solid #000000;	
+}
+
+.title
+{
+	font-family: 'Courgette', cursive;
+	font-size: 36px;
+	display: block;
+	float: left;
+	padding: 10px 20px 10px;
+	margin-left: -20px;
+	font-weight: 200;
+	color: #777;
+	text-shadow: 0 1px 0 white;
+}
+
+.align_center
+{
+    text-align:center;
+}
+
+.align_left
+{
+	text-align: left;
+}
+
+.align_right
+{
+	text-align: right;
+}
+
+.align_full
+{
+    text-align:justify;
+}
+
+.border
+{
+    margin-top:5px;
+    border: 2px solid;
+    border-radius: 5px;
+    -moz-border-radius: 5px;
+}
+
+.footer 
+{
+  padding: 35px 0;
+  margin-top: 70px;
+  border-top: 1px solid #e5e5e5;
+  background-color: #f5f5f5;
+  height:120px;
+}
+
+.footer p 
+{
+  margin-bottom: 0;
+  color: #777;
+  font-size: 12px;
+}
+
+.footer-nav 
+{
+  margin: 10px 0;
+}
+
+.footer-nav li 
+{
+  display: inline;
+  margin-right: 10px;
+}
+
+.doc-legend
+{
+	position: relative;
+	margin: 15px 0;
+	padding: 40px 20px 15px;
+	background-color: #fff;
+	border: 1px solid #ddd;
+	-webkit-border-radius: 4px;
+	-moz-border-radius: 4px;
+	border-radius: 4px;
+}
+ 
+.doc-legend:after
+{
+	content: attr(data-title);
+	position: absolute;
+	top: -1px;
+	left: -1px;
+	padding: 5px 10px;
+	font-size: 14px;
+	font-weight: bold;
+	background-color: #f5f5f5;
+	border: 1px solid #ddd;
+	/*color: #9da0a4;*/
+	color: #000;
+	-webkit-border-radius: 4px 0 4px 0;
+	-moz-border-radius: 4px 0 4px 0;
+	border-radius: 4px 0 4px 0;
+}
+
+.pad {
+    border:1px solid black;
+    cursor:crosshair;
+}​

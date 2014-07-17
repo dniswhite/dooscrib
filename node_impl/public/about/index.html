@@ -1,0 +1,79 @@
+<!doctype html >
+<!--[if lt IE 7]> <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang="en"> <![endif]-->
+<!--[if IE 7]>    <html class="no-js lt-ie9 lt-ie8" lang="en"> <![endif]-->
+<!--[if IE 8]>    <html class="no-js lt-ie9" lang="en"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+		<title>DooScrib - Doodle and Scribble Pad for the Web</title>
+		<meta name="viewport" content="width=device-width">
+		<link rel="stylesheet" href="//ajax.googleapis.com/ajax/libs/jqueryui/1.8/themes/smoothness/jquery-ui.css" />
+  		<link href="/css/bootstrap.min.css" rel="stylesheet" />
+		<link href="/css/site.css" rel="stylesheet" />
+	</head>
+	<body>
+		<div class="navbar navbar-fixed-top">
+	      <div class="navbar-inner">
+	        <div class="container-fluid">
+	          <a class="title" href="/">DooScrib</a>
+	          <div class="nav-collapse collapse">
+	            <ul class="nav pull-right">
+	              <li class="active"><a href="/about/">About</a></li>
+	            </ul>
+	          </div><!--/.nav-collapse -->
+	        </div>
+	      </div>
+	    </div>
+    	<div class="container-fluid page">
+    		<div class="row-fluid">
+    			<div class="doc-legend" data-title="About DooScrib">
+	    			<p>An idea that came from watching my wife play <a href="https://itunes.apple.com/us/app/draw-something-free/id488628250?mt=8">Draw Something</a> 
+	    				and I was wondering if I could create a similar drawing pad on the net.</p>
+	    			<p>As time progresses and I work on this more then I plan to make it all open source.</p>
+	    			<p><strong>Goals</strong></p>
+	    			<ul>
+	    				<li>Concept (<strong>Done</strong>)</li>
+	    				<p>Basic proof of concept with rough code.</p>
+	    				<li>jQuery plugin (<strong>Done - read article <a href="http://www.codeproject.com/Articles/560229/DooScrib-A-jQuery-plugin-for-creating-a-simple-dra">here</a>.</strong>)</li>
+	    				<p>Create a jQuery plugin to emcompass the basic development already done as a proof of concept.</p>
+	    				<li>Shared Canvas (<strong>Currently in Development</strong>)</li>
+	    				<p>Redploy and integrate with a Node.js and Express solution using socket.io to enable a single shared canvas.</p>
+	    				<li>Groups and Rooms</li>
+	    				<p>Add abilities to create groups/rooms with a shared canvas.</p>
+	    				<li>More Features</li>
+	    				<p>Continue to add more features...</p>
+	    			</ul>
+	    			<p>For now enjoy what you can get from it. You can get the plugin source <a href="https://github.com/dniswhite/dooscrib">here</a>.</p>
+    			</div>
+    			<div class="doc-legend" data-title="Credits">
+	    			<p>This site was designed by <a href="http://twitter.com/dniswhite" target="_blank">@dniswhite</a> and for simplicity by using <a href="http://twitter.github.com/bootstrap/index.html" target="_blank">bootstrap</a>.</p>
+	    			<p>Go check out <a href="http://jqueryui.com/" target="_blank">jQuery UI</a> and <a href="http://jquery.com/" target="_blank">jQuery</a> for lots of cool ideas.</p>
+	    			<p>Icons from <a href="http://glyphicons.com">Glyphicons Free</a>, licensed under <a href="http://creativecommons.org/licenses/by/3.0/">CC BY 3.0</a>.</p>
+	    			<p>Colorpicker from <a href="http://www.eyecon.ro/bootstrap-colorpicker/">Colorpicker for Bootstrap</a></p>
+    			</div>
+    			<div class="doc-legend" data-title="History">
+    				<h4>11/10/2012 - First Release</h4>
+    				<p>Site Created and work deployed</p>
+    				<h4>11/11/2012</h4>
+    				<p>Responsive fixes for width but still need to resolve height.</p>
+    				<h4>11/12/2012</h4>
+    				<p>More responsive fixes and also resolved issue with pen width in dropdown not working.</p>
+    				<h4>11/15/2012</h4>
+    				<p>When you click on the Pad Info button you can JSON object reprsenting it all.</p>
+    				<p>Fixed bug in redraw causing the timer loop to get stuck in a loop. My senses are though that the redraw code will continue
+    					to need more work.</p>
+    				<p>Fixed redraw code so that it doesn't stop in the middle of redrawing the pad information.</p>
+    				<h4>3/10/2013 - Updated web site and plugin</h4>
+    				<p>With article complete for plugin I updated the web site to use it. Will update later with article link when published.</p>
+    				<h4>3/20/2013 - Updated web site and plugin</h4>
+    				<p>Bug Fixes and made some visual improvements as well as added a new color picker.</p>
+    			</div>
+    		</div>
+    	</div>
+    	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+		<script src="//ajax.googleapis.com/ajax/libs/jqueryui/1.8.16/jquery-ui.min.js"></script>
+		<script src="/js/bootstrap.min.js"></script>
+		<script src="/js/jquery.alerts.js"></script>
+	</body>
+</html>
