@@ -15,6 +15,10 @@ app.use(express.bodyParser());
 
 app.use(express.static(path.join(__dirname, 'public')));
 
+app.get("/locations", function(req, res) {
+	res.json({"result": true});
+});
+
 app.use(function (req,res) {
     res.render('404', {url:req.url});
 });
