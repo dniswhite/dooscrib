@@ -63,7 +63,7 @@
 		<script src="js/bootstrap-colorpicker.js"></script>
 		<script src="/socket.io/socket.io.js"></script>
 		<script>
-			var socket = io.connect('http://localhost/');
+			var socket = io.connect('http://monovus-monovus.nodejitsu.com/');
 			var surface;
 			var id = Math.round($.now()*Math.random());
 			var prevPoint = new Array();
@@ -153,6 +153,9 @@
 			socket.on('clear', function(data){
 				console.log('clear surface request - ', data);
 				surface.clearSurface();
+			});
+			socket.on('comment', function(data){
+				console.log('comment received - ', data);
 			});
 		</script>
 	</body>

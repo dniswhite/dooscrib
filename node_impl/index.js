@@ -44,6 +44,12 @@ io.on('connection', function (socket) {
 		console.log('clearing - ', data);
 		socket.broadcast.emit('clear', data);
 	});
+	socket.on('comment', function(data){
+		console.log('comment - ', data);
+
+		// should record data in store here
+		socket.broadcast.emit('comment', data);
+	});
 });
  
 server.listen(app.get('port'), function(){
