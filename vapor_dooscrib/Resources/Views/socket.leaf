@@ -1,0 +1,116 @@
+#extend("base")
+
+#export("head") {
+<title>DooScrib - Home</title>
+}
+
+#export("body") {
+#raw() {
+<div class="container pad-screen">
+    <button id="clear" type="button" class="btn btn-default">Clear</button>
+    <div class="btn-group">
+        <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            Pen Size <span class="caret"></span>
+        </button>
+        <ul class="dropdown-menu">
+            <li><a class="pen-size" href="#" data-pen-size="1" >Pen 1</a></li>
+            <li><a class="pen-size" href="#" data-pen-size="2" >Pen 2</a></li>
+            <li><a class="pen-size" href="#" data-pen-size="4" >Pen 4</a></li>
+            <li><a class="pen-size" href="#" data-pen-size="8" >Pen 8</a></li>
+            <li><a class="pen-size" href="#" data-pen-size="16" >Pen 16</a></li>
+            <li><a class="pen-size" href="#" data-pen-size="32" >Pen 32</a></li>
+            <li><a class="pen-size" href="#" data-pen-size="64" >Pen 64</a></li>
+            <li><a class="pen-size" href="#" data-pen-size="128" >Pen 128</a></li>
+        </ul>
+    </div>
+</div>
+<div class="container surface-container" >
+    <div id="surface" >
+    </div>
+</div>
+}
+}
+
+#export("script") {
+<script src="scripts/jquery.alerts.js"></script>
+<script src="scripts/jquery.dooscrib.js"></script>
+<script>
+    var id = Math.round($.now()*Math.random());
+    var prevPoint = new Array();
+    var surface;
+    var dooscrib;
+    
+    function dooScribConnection(host) {
+        var scrib = this;
+        
+        scrib.ws = new WebSocket('ws://' + host);
+        
+        scrib.ws.onopen = function() {
+            var connRequest = JSON.stringify({'command': 'connect', 'username': id})
+            scrib.ws.send(connRequest)
+        }
+        
+        scrib.ws.onmessage = function(event) {
+            var msg = JSON.parse(event.data);
+            
+            if (msg.command == "click") {
+                prevPoint[msg.username] = msg;
+            } else if (msg.command == "paint") {
+                surface.drawLine(prevPoint[msg.username].X, prevPoint[msg.username].Y, msg.X, msg.Y, 0, msg.pen);
+                prevPoint[msg.username] = msg;
+            } else if (msg.command == "clear") {
+                surface.clearSurface();
+            }
+        }
+        
+        scrib.send = function(event) {
+            scrib.ws.send(event);
+        }
+    };
+
+$(document).ready(function(){
+                  var height = $('#raw() { #surface }').height();
+                  var width = $('#raw() { #surface }').width();
+                  
+                  dooscrib = new dooScribConnection(window.location.host + "/dooscrib");
+                  
+                  surface = new $('#raw() { #surface }').dooScribPlugin({
+                                                                        width:width,
+                                                                        height:400,
+                                                                        cssClass:'pad',
+                                                                        penSize:4,
+                                                                        
+                                                                        onMove:function(e) {
+                                                                        var msg = JSON.stringify({'command': 'mousemove', 'username': id, 'X': e.X, 'Y': e.Y });
+                                                                        dooscrib.send(msg);
+                                                                        },
+                                                                        
+                                                                        onClick:function(e) {
+                                                                        var msg = JSON.stringify({'command': 'click', 'username': id, 'X': e.X, 'Y': e.Y});
+                                                                        dooscrib.send(msg);
+                                                                        },
+                                                                        
+                                                                        onPaint:function(e) {
+                                                                        var msg = JSON.stringify({'command': 'paint', 'username': id, 'X': e.X, 'Y': e.Y, 'pen': surface.penSize() });
+                                                                        dooscrib.send(msg);
+                                                                        },
+                                                                        
+                                                                        onRelease:function(e) {
+                                                                        var msg = JSON.stringify({'command': 'release', 'username': id, 'X': e.X, 'Y': e.Y});
+                                                                        dooscrib.send(msg);
+                                                                        }
+                                                                        });
+                  });
+                  
+                  $('#raw() { #clear }').click(function() {
+                                               var msg = JSON.stringify({'command': 'clear', 'username': id });
+                                               dooscrib.send(msg);
+                                               });
+                                               
+                                               $('.pen-size').click(function() {
+                                                                    var pen = $(this).attr('data-pen-size');
+                                                                    surface.penSize(pen);
+                                                                    });
+                                                                    
+    </script>
+}

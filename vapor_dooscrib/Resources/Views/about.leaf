@@ -1,0 +1,60 @@
+#extend("base")
+
+#export("head") {
+<title>DooScrib - About</title>
+<style>
+    .pad {
+        border:1px solid black;
+        cursor:crosshair;
+    }
+.pad-screen {
+    padding: 75px 0px 15px 0px;
+}
+
+.surface-container {
+}
+​</style>
+}
+
+#export("body") {
+#raw() {
+<div class="container pad-screen">
+    <div class="row-fluid">
+        <div class="doc-legend" data-title="About DooScrib">
+            <p>An idea that came from watching my wife play <a href="https://itunes.apple.com/us/app/draw-something-free/id488628250?mt=8">Draw Something</a>
+            and I was wondering if I could create a similar drawing pad on the net.</p>
+            <p><strong>Goals</strong></p>
+            <ul>
+                <li>Concept (<strong>Done</strong>)</li>
+                <p>Basic proof of concept with rough code.</p>
+                <li>jQuery plugin (<strong>Done - read article <a href="http://www.codeproject.com/Articles/560229/DooScrib-A-jQuery-plugin-for-creating-a-simple-dra">here</a>.</strong>)</li>
+                <p>Create a jQuery plugin to emcompass the basic development already done as a proof of concept.</p>
+                <li>Shared Canvas (<strong>Current</strong>)</li>
+                <p>The initial concept was developed with Node.js and Express using socket.io, for WebSocket communications, to enable a single shared canvas. The current solution still uses WebSockets but the backend is now developed with Swift using <a href="https://vapor.codes/">Vapor</a>.</p>
+                <li>Groups and Rooms (<strong>In Development</strong>)</li>
+                <p>Add abilities to create groups/rooms with each having their own shared canvas.</p>
+                <li>More Features</li>
+                <p>Submit an idea if you have one.</p>
+            </ul>
+            <p>For now enjoy what you can get from it. You can get the plugin source <a href="https://github.com/dniswhite/dooscrib">here</a>.</p>
+        </div>
+        <div class="doc-legend" data-title="Credits">
+            <p><strong>Credits</strong></p>
+            <ul>
+                <li>Design and Development</li>
+                <p>This site was designed and developed by <a href="http://twitter.com/dniswhite" target="_blank">@dniswhite</a></p>
+                <li>Check Out</li>
+                <p>This site has gone through multiple changes. Currently everything is developed using <a href="https://vapor.codes/">Vapor</a>.</p>
+                <li>About Me</li>
+                <p>You can read more about me and all my various projects <a href="http://dniswhite.com/">here</a>.</p>
+            </ul>
+        </div>
+    </div>
+</div>
+}
+}
+
+#export("script") {
+<script src="scripts/jquery.alerts.js"></script>
+<script src="scripts/jquery.dooscrib.js"></script>
+}

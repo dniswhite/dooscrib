@@ -1,0 +1,10 @@
+.pad {
+    border:1px solid black;
+    cursor:crosshair;
+}
+.pad-screen {
+    padding: 75px 0px 15px 0px;
+}
+.surface-container {
+}
+​
