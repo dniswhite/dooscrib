@@ -43,7 +43,7 @@
     function dooScribConnection(host) {
         var scrib = this;
         
-        scrib.ws = new WebSocket('ws://' + host);
+        scrib.ws = new WebSocket('wss://' + host);
         
         scrib.ws.onopen = function() {
             var connRequest = JSON.stringify({'command': 'connect', 'username': id})
