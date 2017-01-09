@@ -1,4 +1,4 @@
-dooScrib node.js implementation 
+dooScrib Vapor implementation 
 =======
 Well I had promised an implementation using node.js and socket.io for some realtime collaboration so here it is.
 
